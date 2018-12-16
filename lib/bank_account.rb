@@ -18,7 +18,7 @@ class BankAccount
   end
   
   def valid?
-    @status.
+    @status.eql?("open") && @balance > 0
   end
 
 end
