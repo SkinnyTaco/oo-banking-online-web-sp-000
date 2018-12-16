@@ -20,5 +20,9 @@ class BankAccount
   def valid?
     @status.eql?("open") && @balance > 0
   end
+  
+  def close_account
+    
+  end
 
 end
