@@ -14,7 +14,9 @@ class Transfer
   end
   
   def execute_transaction
-    if self.valid? && @status.eql?("pending")
+    if sender.balance < amount
+      "Transaction rejected. Please check your account balance"
+    elsif self.valid? && @status.eql?("pending")
       sender.balance -= amount
       receiver.balance += amount
       @status = "complete"
